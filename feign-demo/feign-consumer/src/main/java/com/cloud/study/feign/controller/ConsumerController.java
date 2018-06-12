@@ -16,13 +16,18 @@ public class ConsumerController {
     @Autowired
     RefactorHelloService refactorHelloService;
 
-    @RequestMapping(value = "/feign-consumer",method = RequestMethod.GET)
-    public String helloConsumer(){
+    @RequestMapping(value = "/feign-consumer", method = RequestMethod.GET)
+    public String helloConsumer() {
         StringBuilder sb = new StringBuilder();
         sb.append(refactorHelloService.hello("MIMI")).append("\n");
-        sb.append(refactorHelloService.hello("MIMI",20)).append("\n");
-        sb.append(refactorHelloService.hello(new User("MIMI",20))).append("\n");
+        sb.append(refactorHelloService.hello("MIMI", 20)).append("\n");
+        sb.append(refactorHelloService.hello(new User("MIMI", 20))).append("\n");
         return sb.toString();
+    }
+
+    @RequestMapping("/hello")
+    public String hello() {
+        return refactorHelloService.hello();
     }
 
 }

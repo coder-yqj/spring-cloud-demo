@@ -6,6 +6,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * Created by Administrator on 2018/5/31/031.
  */
-@FeignClient(value = "HELLO-SERVICE")
+@FeignClient(value = "HELLO-SERVICE",fallback = HelloServiceFallback.class)
 public interface RefactorHelloService extends HelloService{
 }

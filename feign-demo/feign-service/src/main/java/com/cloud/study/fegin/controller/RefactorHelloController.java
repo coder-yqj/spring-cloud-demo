@@ -35,11 +35,11 @@ public class RefactorHelloController implements HelloService{
         //测试超时
         int sleepTime = new Random().nextInt(3000);
         System.out.println("sleep time:"+ sleepTime);
-        try {
+     /*   try {
             Thread.sleep(sleepTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         return "Hello World";
     }
 }
